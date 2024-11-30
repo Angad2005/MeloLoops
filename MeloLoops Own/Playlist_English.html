@@ -1,0 +1,499 @@
+<html>
+ <head>
+  <title>
+   Music Player
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             background-color: #f5f5f5;
+         }
+         .header {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             padding: 10px 20px;
+             background-color: #fff;
+             border-bottom: 1px solid #ddd;
+         }
+         .header .logo {
+             display: flex;
+             align-items: center;
+         }
+         .header .logo img {
+             height: 30px;
+             margin-right: 10px;
+         }
+         .header .nav {
+             display: flex;
+             align-items: center;
+         }
+         .header .nav a {
+             margin: 0 10px;
+             text-decoration: none;
+             color: #333;
+         }
+         .header .search {
+             display: flex;
+             align-items: center;
+             background-color: #f5f5f5;
+             padding: 5px 10px;
+             border-radius: 20px;
+         }
+         .header .search input {
+             border: none;
+             background: none;
+             outline: none;
+             padding: 5px;
+         }
+         .header .search i {
+             color: #888;
+         }
+         .header .profile {
+             display: flex;
+             align-items: center;
+         }
+         .header .profile select {
+             border: none;
+             background: none;
+             outline: none;
+             margin-right: 10px;
+         }
+         .header .profile i {
+             color: #888;
+         }
+         .container {
+             display: flex;
+             padding: 20px;
+         }
+         .album-art {
+             flex: 1;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+         }
+         .album-art img {
+             width: 300px;
+             height: 300px;
+             border-radius: 10px;
+         }
+         .album-info {
+             text-align: center;
+             margin-top: 10px;
+         }
+         .album-info h2 {
+             margin: 10px 0;
+             font-size: 24px;
+             color: #333;
+         }
+         .album-info p {
+             margin: 0;
+             font-size: 18px;
+             color: #888;
+         }
+         .queue {
+             flex: 1;
+             margin-left: 20px;
+         }
+         .queue h3 {
+             margin: 0;
+             font-size: 18px;
+             color: #333;
+             border-bottom: 1px solid #ddd;
+             padding-bottom: 10px;
+         }
+         .queue .controls {
+             display: flex;
+             justify-content: flex-end;
+             align-items: center;
+             margin: 10px 0;
+         }
+         .queue .song-list {
+             list-style: none;
+             padding: 0;
+             margin: 0;
+             max-height: 400px;
+             overflow-y: auto;
+         }
+         .queue .song-list li {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             padding: 10px 0;
+             border-bottom: 1px solid #ddd;
+         }
+         .queue .song-list li img {
+             width: 40px;
+             height: 40px;
+             border-radius: 5px;
+             margin-right: 10px;
+         }
+         .queue .song-list li .song-info {
+             flex: 1;
+             display: flex;
+             align-items: center;
+         }
+         .queue .song-list li .song-info p {
+             margin: 0;
+             font-size: 14px;
+             color: #333;
+         }
+         .queue .song-list li .song-info p.artist {
+             color: #888;
+         }
+         .queue .song-list li .song-controls {
+             display: flex;
+             align-items: center;
+         }
+         .queue .song-list li .song-controls i {
+             color: #888;
+             margin-left: 0px;
+             margin-right: 20px;
+             cursor: pointer;
+         }
+         .footer {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             padding: 10px 20px;
+             background-color: #fff;
+             border-top: 1px solid #ddd;
+         }
+         .footer .progress {
+             flex: 1;
+             display: flex;
+             align-items: center;
+         }
+         .footer .progress span {
+             margin: 0 10px;
+             font-size: 14px;
+             color: #888;
+         }
+         .footer .progress-bar {
+             flex: 1;
+             height: 5px;
+             background-color: #ddd;
+             border-radius: 5px;
+             position: relative;
+         }
+         .footer .progress-bar .progress {
+             height: 100%;
+             background-color: #00bfa5;
+             border-radius: 5px;
+             width: 50%;
+         }
+         .footer .controls {
+             display: flex;
+             align-items: center;
+         }
+         .footer .controls i {
+             color: #888;
+             margin: 0 10px;
+             cursor: pointer;
+         }
+   </style>
+ </head>
+ <body>
+  <div class="header">
+   <div class="logo">
+    <img alt="JioSaavn Logo" height="30" src="Design.png" width="30"/>
+    <span>
+     MeloLoops
+    </span>
+   </div>
+   <div class="nav">
+    <a href="Playlist.html">
+     My Playlists
+    </a>
+    <a href="About V2.html">
+     About Us
+    </a>
+    <a href="chill-music-player-master\public\index.html">
+     Chill Mode
+    </a>
+   </div>
+   <div class="search">
+    <input placeholder="Search" type="text"/>
+    <i class="fas fa-search">
+    </i>
+   </div>
+   <div class="profile">
+    <select onchange="if (this.value) location.href=this.value;">
+      <option value="">Select a language</option>
+      <option value="Playlist.html">Choose your playlist</option>
+      <option value="Playlist_Hindi.html">Hindi</option>
+      <option value="Playlist_English.html">English</option>
+      <option value="Playlist_Punjabi.html">Punjabi</option>
+  </select>
+  <a href="Login.html"><i class="fas fa-user-circle">
+    </i></a>
+   </div>
+  </div>
+  <div class="container">
+   <div class="album-art">
+    <img alt="Album Art" height="300" src="https://storage.googleapis.com/a1aa/image/lnWyVDRFe2UJVCfMneL2zqgCEUxOoJ3Sf8wC2k8fLOzhd5UeE.jpg" width="300"/>
+    <div class="album-info">
+     <h2>
+      Goriye
+     </h2>
+     <p>
+      Darshan Raval
+     </p>
+    </div>
+   </div>
+   <div class="queue">
+    <h3>
+     English Playlist
+    </h3>
+    <div class="controls">
+    </div>
+    <ul class="song-list" id="song-list">
+     <!-- Songs will be added here dynamically -->
+    </ul>
+   </div>
+  </div>
+  <div class="footer">
+   <div class="progress">
+    <span id="current-time">0:00</span>
+    <div class="progress-bar">
+     <div class="progress" id="progress-bar"></div>
+    </div>
+    <span id="duration">0:00</span>
+   </div>
+   <div class="controls">
+    <i class="fas fa-step-backward" id="prev-btn"></i>
+    <i class="fas fa-play" id="play-btn"></i>
+    <i class="fas fa-step-forward" id="next-btn"></i>
+    <i class="fas fa-volume-mute" id="mute-btn" style="display: none;"></i>
+    <i class="fas fa-volume-up" id="volume-btn"></i>
+   </div>
+  </div>
+
+  <audio id="audio" src=""></audio>
+
+  <script>
+    const songs = [
+      {
+        title: "Bye Bye Bye",
+        artist: "-NYSC",
+        duration: "3:20",
+        src: "eng/1.mp3",
+        img: "https://storage.googleapis.com/a1aa/image/OFV6W4U5vi4sOV29VDr9C0ICKXaPX9S3Sb40mtm7v9aLkD9E.jpg"
+      },
+      {
+        title: "Let Me Love You",
+        artist: "-DJ Snake",
+        duration: "3:25",
+        src: "eng/DJ Snake - Let Me Love You ft. Justin Bieber.mp3",
+        img: "https://storage.googleapis.com/a1aa/image/b3Z7tQAexQxBS6ue2aXTfWEmfFONknCIt868CofLGYvsKyheE.jpg"
+      },
+      {
+        title: "We don't Talk Anymore",
+        artist: "-Charlie Puth",
+        duration: "4:01",
+        src: "eng/3.mp3",
+        img: "https://storage.googleapis.com/a1aa/image/b3Z7tQAexQxBS6ue2aXTfWEmfFONknCIt868CofLGYvsKyheE.jpg"
+      },
+      {
+        title: "Talking To the Moon",
+        artist: "-Bruno Mars",
+        duration: "3:34",
+        src: "eng/4.mp3",
+        img: "https://storage.googleapis.com/a1aa/image/PnpzN35fkVXoBCEFp0fY8GFEEa2ff1D3dTJKTll49R9NI5QPB.jpg"
+      },
+      {
+        title: "Die With a smile",
+        artist: "-Bruno Mars",
+        duration: "4:12",
+        src: "eng/6.mp3",
+        img: "https://storage.googleapis.com/a1aa/image/imve9NBTPg0WfExvVafuoGf5I2Vn6op7fup63KeSV0jtokD9E.jpg"
+      },
+      {
+        title: "Maps",
+        artist: "-Marron 5",
+        duration: "3:08",
+        src: "eng/7.mp3",
+        img: "https://storage.googleapis.com/a1aa/image/nzf6h7xYFK2nGaQCYvX0tXTToEet0jZlVUzftT5SLXLvlconA.jpg"
+      },
+      {
+        title: "Payphone",
+        artist: "-Maroon 5",
+        duration: "3:45",
+        src: "eng/Maroon 5 - Payphone (Lyrics).mp3",
+        img: "https://storage.googleapis.com/a1aa/image/1geeVy0hEohegJ5wAVCFyU5ivENT8qihHWQfmmIU7cwyP5QPB.jpg"
+      },
+      {
+        title: "Grenade",
+        artist: "-Bruno Mars",
+        duration: "3:40",
+        src: "eng/5.mp3",
+        img: "https://storage.googleapis.com/a1aa/image/vOyMNEkTds6jANIpCbtBSU0qrs8Lepk8BBuLhnZBykMKKH6JA.jpg"
+      },
+      {
+        title: "Treat You Better",
+        artist: "-Shawn Mendes",
+        duration: "4:16",
+        src: "eng/Shawn Mendes - Treat You Better.mp3",
+        img: "https://storage.googleapis.com/a1aa/image/uimRFC1pD1qXGRm8bgeZuefPwqkZOSu7Mba8IjE2LvVQ1YonA.jpg"
+      },
+      {
+        title: "Shape Of You",
+        artist: "-Ed Sheeran",
+        duration: "4:23",
+        src: "eng/Ed Sheeran - Shape of You (Official Music Video).mp3",
+        img: "https://storage.googleapis.com/a1aa/image/b4aWMkHCbh40LxLokvcGnANumQXcTPNO7hHpslugKP87lD9E.jpg"
+      }
+      
+      // Add more songs here...
+    ];
+    
+    let currentSongIndex = 0;
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('play-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const currentTimeDisplay = document.getElementById('current-time');
+    const durationDisplay = document.getElementById('duration');
+    const progressBar = document.getElementById('progress-bar');
+    const songList = document.getElementById('song-list');
+  
+    function loadSong(song) {
+      audio.src = song.src;
+      document.querySelector('.album-info h2').textContent = song.title;
+      document.querySelector('.album-info p').textContent = song.artist;
+      updateDuration();
+    }
+  
+    function updateDuration() {
+      audio.onloadedmetadata = () => {
+        const duration = audio.duration;
+        durationDisplay.textContent = formatTime(duration);
+      };
+    }
+  
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+  
+    function playSong() {
+      audio.play();
+      playBtn.classList.replace('fa-play', 'fa-pause');
+    }
+  
+    function pauseSong() {
+      audio.pause();
+      playBtn.classList.replace('fa-pause', 'fa-play');
+    }
+  
+    function nextSong() {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      loadSong(songs[currentSongIndex]);
+      playSong();
+    }
+  
+    function prevSong() {
+      currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+      loadSong(songs[currentSongIndex]);
+      playSong();
+    }
+  
+    function updateProgress() {
+      const currentTime = audio.currentTime;
+      currentTimeDisplay.textContent = formatTime(currentTime);
+      progressBar.style.width = `${(currentTime / audio.duration) * 100}%`;
+    }
+  
+    // New function to handle progress bar clicks
+    function seek(event) {
+      const progressBarContainer = document.querySelector('.progress-bar');
+      const totalWidth = progressBarContainer.clientWidth;
+      const clickX = event.clientX - progressBarContainer.getBoundingClientRect().left;
+      const percentage = clickX / totalWidth;
+      const newTime = percentage * audio.duration;
+      audio.currentTime = newTime;
+    }
+  
+    // Add event listener for the progress bar click
+    document.querySelector('.progress-bar').addEventListener('click', seek);
+  
+    function displaySongList() {
+      songList.innerHTML = ''; // Clear existing list items
+      songs.forEach((song) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <img src="${song.img}" alt="${song.title} cover">
+          <div class="song -info">
+            <p>${song.title}</p>
+            <p class="artist">${song.artist}</p>
+          </div>
+          <div class="song-controls">
+            <i class="fas fa-play" onclick="playSelectedSong('${song.src}')"></i>
+          </div>
+        `;
+        songList.appendChild(li);
+      });
+    }
+  
+    function playSelectedSong(src) {
+  const selectedSong = songs.find(song => song.src === src);
+  if (selectedSong) {
+    loadSong(selectedSong); // Load the selected song to update album info
+    playSong(); // Play the selected song
+  }
+    }
+  
+    playBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        playSong();
+      } else {
+        pauseSong();
+      }
+    });
+  
+    nextBtn.addEventListener('click', nextSong);
+    prevBtn.addEventListener('click', prevSong);
+    audio.addEventListener('timeupdate', updateProgress);
+  
+    // Load the first song
+    loadSong(songs[currentSongIndex]);
+    displaySongList(); // Call the function to display songs when the page loads
+    const volumeBtn = document.getElementById('volume-btn');
+const muteBtn = document.getElementById('mute-btn');
+
+let isMuted = false;
+
+function toggleMute() {
+    if (isMuted) {
+        audio.muted = false; // Unmute the audio
+        volumeBtn.style.display = 'inline'; // Show volume icon
+        muteBtn.style.display = 'none'; // Hide mute icon
+    } else {
+        audio.muted = true; // Mute the audio
+        volumeBtn.style.display = 'none'; // Hide volume icon
+        muteBtn.style.display = 'inline'; // Show mute icon
+    }
+    isMuted = !isMuted; // Toggle the mute state
+}
+
+// Add event listener for the mute button
+muteBtn.addEventListener('click', toggleMute);
+volumeBtn.addEventListener('click', toggleMute);
+function loadSong(song) {
+  audio.src = song.src;
+  document.querySelector('.album-info h2').textContent = song.title;
+  document.querySelector('.album-info p').textContent = song.artist;
+  
+  // Update the album art image source
+  const albumArtImg = document.querySelector('.album-art img');
+  albumArtImg.src = song.img;
+
+  updateDuration();
+}
+  </script>
+ </body>
+</html>

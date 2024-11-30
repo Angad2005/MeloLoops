@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playpen+Sans:wght@100..800&family=Teko:wght@300..700&display=swap');
+*{margin: 0;}
+#head {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: space-between; /* Space between the logo and navigation */
+    align-items: center;
+}
+#center {
+    text-align: center;
+    display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 15;
+}
+#right {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    position: relative;
+    gap: 20px;
+    overflow-wrap: break-word;
+    color:black ;
+    right: 20px;
+    
+}
+.head{
+  color: black;
+  text-decoration: none;
+}
+body {
+    background: linear-gradient(#ffffff, #e0c7ff);
+    height: 100vh;
+}
+#cover {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    
+   
+
+}
+#eng {
+    background-color: cornflowerblue;
+    color: aliceblue;
+    font-family:'Times New Roman', Times, serif;
+   
+    width: 115px;
+}
+#eng::placeholder {
+    color: white; /* Set the color here */
+    font-style: italic; /* Optional: to italicize the placeholder text */
+  }
+  
+  #frt {
+    background: cornflowerblue;
+    border: hidden;
+    cursor:pointer;
+  
+    
+    
+  }
+  .next {
+    width: 40px;
+    height: 40px;
+    text-align: end;
+  }
+
+  #next{
+    text-align: right;
+    align-self: center;
+    right: 250px;
+  }
+#rgb{
+  float: inline-end;
+}
+#cover1 {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-left: 500px;
+}
+
+#Account{
+  padding: right 10px; ;
+}
+.player {
+  
+  position: absolute;
+  top: 600px;
+  left: 770px;
+}
+#player {
+  width: 350px;
+}
+
+#content {
+  display:flex ;
+  justify-content: center;
+  margin-left: 30px;
+}
+.song {
+  width: 300px;
+  background: none;
+  border:none;
+  border-radius: 30px;
+}
+.song:hover {
+  background: linear-gradient(rgb(217, 16, 180),rgb(216, 145, 3)
+  )
+}
+.song-name {
+  font-size: medium;
+  font-family: Chakra Petch;
+  text-align: center;
+  display: inline-block;
+}
+.next {
+  text-align: start;
+}
+.footer {
+  background-color: black;
+  color: #ffffff;
+  display: flex;
+ height: 5vh;
+ width: 181vh;
+  position:absolute;
+  top: 95vh;
+  font-size: 25px;
+}
+.link {
+  color: #ffffff;
+}
+#up-next {
+  margin-left: 20px;
+  text-align: left;}
+
+#next-up {
+    font-size: 24px;
+    font-weight: bold;}
+
+#container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+  }

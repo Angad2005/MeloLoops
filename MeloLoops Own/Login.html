@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeloLoops | Login </title>
+    <link rel="stylesheet" href="Login-CSS.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+   
+</head>
+<body>
+    <div class="form-container">
+        <div class="col1">
+            <div class="image-layer">
+                <!-- <img src="Music.jpg" class="image-music">
+                <img src="Music1.jpg" class="image-1"> 
+                <img src="Music2.jpg" class="image-guitar">
+                <img src="music3.jpg" class="image-mic"> -->
+            </div>
+            <p class="tagline">Keep Listening to music Ad-Free only on<br> <span class="brand">MeloLoops</span></p>
+        </div>
+        <div class="col2">
+            <div class="btn">
+                <button class="btn1" id="login">Sign In</button>
+                <button class="btn2" id="register">Sign Up</button>
+            </div>
+        
+            <div class="login-form">
+                <div class="form-title">
+                    <span>Sign In</span>
+                </div>
+                <div class="form-input">
+                    <div class="input-box">
+                        <input type="text"  class="input-field" placeholder="Username" required id="username">
+                        <i class="fa-solid fa-user icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password"  class="input-field" placeholder="Password" required id="password">
+                        <i class="fa-solid fa-lock icon"></i>
+                    </div>
+                    <div class="forgot-pass">
+                        <a href="Forgot password.html">Forgot Password?</a>
+                    </div>
+                    <div class="input-box">
+                        <button class="input-submit" id="signInButton">
+                            <span>Sign In</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="register-form">
+                <div class="form-title">
+                    <span>Create Account</span>
+                </div>
+                <div class="form-input">
+                    <div class="input-box">
+                       <input type="text"  class="input-field" placeholder="Email" required>
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text"  class="input-field" placeholder="Username" required>
+                        <i class="fa-solid fa-user icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password"  class="input-field" placeholder="Password" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                    </div>
+                    <div class="input-box">
+                         <button class="input-submit" onclick="location.href='Playlist.html';">
+                            <span>Sign Up</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script> 
+</body>
+</html>
